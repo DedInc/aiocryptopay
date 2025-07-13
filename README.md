@@ -9,22 +9,51 @@ Asynchronous Java SDK for the [@CryptoBot](https://t.me/CryptoBot) API.
 
 ## Installation
 
-### JitPack
+### Gradle (Recommended)
 
-To use this library with JitPack, add the following to your `build.gradle.kts`:
+Add it in your root `settings.gradle` at the end of repositories:
+
+```gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+And add the dependency in your `build.gradle`:
+
+```gradle
+dependencies {
+    implementation 'com.github.DedInc:aiocryptopay:1.0'
+}
+```
+
+### Gradle (Kotlin DSL)
+
+For `settings.gradle.kts`:
 
 ```kotlin
-repositories {
-    mavenCentral()
-    maven { url = uri("https://jitpack.io") }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
 }
+```
 
+And in your `build.gradle.kts`:
+
+```kotlin
 dependencies {
     implementation("com.github.DedInc:aiocryptopay:1.0")
 }
 ```
 
-Or for Maven:
+### Maven
 
 ```xml
 <repositories>
@@ -35,7 +64,7 @@ Or for Maven:
 </repositories>
 
 <dependency>
-    <groupId>com.github.DeedInc</groupId>
+    <groupId>com.github.DedInc</groupId>
     <artifactId>aiocryptopay</artifactId>
     <version>1.0</version>
 </dependency>
